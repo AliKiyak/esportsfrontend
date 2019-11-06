@@ -9,6 +9,10 @@ import { DetailGameComponent } from './game/detail-game/detail-game.component';
 import { AddGameComponent } from './game/add-game/add-game.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
+import { PlayersModule } from './players/players.module';
+import { PlayerComponent } from './players/players/player.component';
+import { DetailPlayerComponent } from './players/detail-player/detail-player.component';
+
 
 const appRoutes = [
   {path: 'games', component: GameComponent},
@@ -16,6 +20,8 @@ const appRoutes = [
   {path: 'games/addgame', component: AddGameComponent},
   {path: 'teams', component: TeamComponent},
   {path: 'teams/:gameid', component: TeamComponent},
+  {path: 'players', component: PlayerComponent},
+  {path: 'player/detail/:playerId', component: DetailPlayerComponent}
 ];
 @NgModule({
   declarations: [
@@ -30,7 +36,8 @@ const appRoutes = [
     RouterModule.forRoot(appRoutes, { enableTracing: false }),
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    PlayersModule
   ],
   providers: [],
   bootstrap: [AppComponent]
