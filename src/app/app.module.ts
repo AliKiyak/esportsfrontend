@@ -12,6 +12,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { PlayersModule } from './players/players.module';
 import { PlayerComponent } from './players/players/player.component';
 import { DetailPlayerComponent } from './players/detail-player/detail-player.component';
+import { AddPlayerComponent } from './players/add-player/add-player.component';
 
 
 const appRoutes = [
@@ -21,7 +22,8 @@ const appRoutes = [
   {path: 'teams', component: TeamComponent},
   {path: 'teams/:gameid', component: TeamComponent},
   {path: 'players', component: PlayerComponent},
-  {path: 'player/detail/:playerId', component: DetailPlayerComponent}
+  {path: 'player/detail/:playerId', component: DetailPlayerComponent},
+  {path: 'players/addplayer', component: AddPlayerComponent}
 ];
 @NgModule({
   declarations: [

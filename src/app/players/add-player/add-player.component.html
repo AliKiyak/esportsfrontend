@@ -1,1 +1,47 @@
-<p>add-player works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <form [formGroup]="playerForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <label for="gamerTag">Gamertag</label>
+                    <input formControlName="gamerTag" type="text" class="form-control" id="gamerTag" name="gamerTag">
+                </div>
+                <div class="form-group">
+                    <label for="realName">Name</label>
+                    <input formControlName="realName" type="text" class="form-control" id="realName" name="realName">
+                </div>
+                <div class="form-group">
+                    <label for="age">Age</label>
+                    <input formControlName="age" type="number" class="form-control" id="age" name="age">
+                </div>
+                <div class="form-group">
+                    <label for="mouse">Mouse</label>
+                    <textarea formControlName="mouse" type="text" class="form-control" id="mouse"
+                        name="mouse"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="mousepad">Mousepad</label>
+                    <textarea formControlName="mousepad" type="text" class="form-control" id="mousepad"
+                        name="mousepad"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="keyboard">Keyboard</label>
+                    <textarea formControlName="keyboard" type="text" class="form-control" id="keyboard"
+                        name="keyboard"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="headset">Headset</label>
+                    <textarea formControlName="headset" type="text" class="form-control" id="headset"
+                        name="headset"></textarea>
+                </div>
+                <!-- <div class="form-group">
+                    <label for="picture">Upload a profile picture</label>
+                    <textarea formControlName="picture" type="text" class="form-control" id="picture"
+                        name="picture"></textarea>
+                </div> -->
+
+                <input type="submit" class="btn btn-primary" value="Add player">
+            </form>
+        </div>
+    </div>
+</div>
