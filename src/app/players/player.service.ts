@@ -20,4 +20,8 @@ export class PlayerService {
     addPlayer(player) {
         return this.http.post<any>('http://localhost:8050/player/addplayer', player);
     }
+
+    filterPlayers(gamerTag) {
+        return this.http.get<Player>('http://localhost:8050/player/players/filter/' + gamerTag);
+    }
 }
