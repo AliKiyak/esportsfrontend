@@ -16,4 +16,8 @@ export class PlayerService {
     getPlayer(playerId) {
         return this.http.get<Player>('http://localhost:8050/player/detail/' + playerId);
     }
+
+    addPlayer(player) {
+        return this.http.post<any>('http://localhost:8050/player/addplayer', player);
+    }
 }
