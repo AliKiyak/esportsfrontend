@@ -16,12 +16,12 @@ export class TeamComponent implements OnInit {
   teamtitle = '';
 
   ngOnInit() {
-    const id = this.route.snapshot.paramMap.get('gameid');
+    const gameid = this.route.snapshot.paramMap.get('gameid');
 
-    if (id == null) {
+    if (gameid == null) {
       this.teamService.getTeams().subscribe(result => (this.teams = result));
     } else {
-      this.teamService.getTeamOfGame(id).subscribe(result => this.teams = result);
+      this.teamService.getTeamOfGame(gameid).subscribe(result => this.teams = result);
     }
   }
   filterTeams() {

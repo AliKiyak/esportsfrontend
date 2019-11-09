@@ -8,11 +8,13 @@ import { TeamComponent } from './team/team.component';
 import { DetailGameComponent } from './game/detail-game/detail-game.component';
 import { AddGameComponent } from './game/add-game/add-game.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-
 import { PlayersModule } from './players/players.module';
 import { PlayerComponent } from './players/players/player.component';
 import { DetailPlayerComponent } from './players/detail-player/detail-player.component';
 import { AddPlayerComponent } from './players/add-player/add-player.component';
+import { TournamentsComponent } from './tournaments/tournaments.component';
+import { TournamentDetailComponent } from './tournaments/tournament-detail/tournament-detail.component';
+import { DetailTeamComponent } from './team/detail-team/detail-team.component';
 
 
 const appRoutes = [
@@ -21,9 +23,13 @@ const appRoutes = [
   {path: 'games/addgame', component: AddGameComponent},
   {path: 'teams', component: TeamComponent},
   {path: 'teams/:gameid', component: TeamComponent},
+  {path: 'teams/detail/:teamid', component: DetailTeamComponent},
   {path: 'players', component: PlayerComponent},
   {path: 'player/detail/:playerId', component: DetailPlayerComponent},
-  {path: 'players/addplayer', component: AddPlayerComponent}
+  {path: 'players/addplayer', component: AddPlayerComponent},
+  {path: 'tournaments', component: TournamentsComponent},
+  {path: 'tournaments/game/:gameid', component: TournamentsComponent},
+  {path: 'tournament/detail/:tournamentid', component: TournamentDetailComponent},
 ];
 @NgModule({
   declarations: [
@@ -31,7 +37,10 @@ const appRoutes = [
     GameComponent,
     TeamComponent,
     DetailGameComponent,
-    AddGameComponent
+    DetailTeamComponent,
+    AddGameComponent,
+    TournamentsComponent,
+    TournamentDetailComponent
   ],
   imports: [
     BrowserModule,
