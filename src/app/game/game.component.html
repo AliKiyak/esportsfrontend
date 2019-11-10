@@ -26,6 +26,9 @@
           <a [routerLink]="['/tournaments/game', game.id]" class="btn btn-primary ml-1">Tournaments</a>
           <a [routerLink]="['/teams', game.id]" class="btn btn-primary ml-1">Teams</a>
         </div>
+        <div class="card-footer text-muted">
+          <button class="btn btn-light" (click)="deleteGame(game.id)">Delete game</button>
+        </div>
       </div>
     </div>
   </div>

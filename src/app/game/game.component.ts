@@ -32,4 +32,10 @@ export class GameComponent implements OnInit {
     }
   }
 
+  deleteGame(gameid) {
+    this.gameService.deleteGame(gameid).subscribe(
+      () => this.ngOnInit()
+    );
+  }
+
 }

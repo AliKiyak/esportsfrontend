@@ -10,6 +10,7 @@ import { TournamentService } from './tournament.service';
 export class TournamentsComponent implements OnInit {
 
 
+  name = '';
   tournaments: any = [];
   constructor(private route: ActivatedRoute,
               private tournamentService: TournamentService) { }
@@ -24,4 +25,17 @@ export class TournamentsComponent implements OnInit {
     }
   }
 
+  filter() {
+    if (this.name === '') {
+      this.ngOnInit();
+    } else {
+      this.tournamentService.filterTournaments(this.name).subscribe(result => this.tournaments = result);
+    }
+  }
+
+  deleteTournament(tournamentId) {
+    this.tournamentService.deleteTournament(tournamentId).subscribe(
+      () => this.ngOnInit()
+    );
+  }
 }

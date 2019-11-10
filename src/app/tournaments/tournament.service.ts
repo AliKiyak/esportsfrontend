@@ -19,4 +19,16 @@ export class TournamentService {
   getDetailTournament(tournamentid) {
     return this.http.get<any>('http://localhost:8050/tournament/detail/' + tournamentid);
   }
+
+  addTournament(tournament) {
+    return this.http.post<any>('http://localhost:8050/tournament/addtournament', tournament);
+  }
+
+  filterTournaments(name) {
+    return this.http.get<any>('http://localhost:8050/tournament/tournaments/filter/' + name);
+  }
+
+  deleteTournament(tournamentId) {
+    return this.http.delete<any>('http://localhost:8050/tournament/deletetournament/' + tournamentId);
+  }
 }

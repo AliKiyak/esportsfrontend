@@ -15,6 +15,7 @@ import { AddPlayerComponent } from './players/add-player/add-player.component';
 import { TournamentsComponent } from './tournaments/tournaments.component';
 import { TournamentDetailComponent } from './tournaments/tournament-detail/tournament-detail.component';
 import { DetailTeamComponent } from './team/detail-team/detail-team.component';
+import { AddTournamentComponent } from './tournaments/add-tournament/add-tournament.component';
 
 
 const appRoutes = [
@@ -30,6 +31,7 @@ const appRoutes = [
   {path: 'tournaments', component: TournamentsComponent},
   {path: 'tournaments/game/:gameid', component: TournamentsComponent},
   {path: 'tournament/detail/:tournamentid', component: TournamentDetailComponent},
+  {path: 'tournament/addtournament', component: AddTournamentComponent},
 ];
 @NgModule({
   declarations: [
@@ -40,7 +42,8 @@ const appRoutes = [
     DetailTeamComponent,
     AddGameComponent,
     TournamentsComponent,
-    TournamentDetailComponent
+    TournamentDetailComponent,
+    AddTournamentComponent
   ],
   imports: [
     BrowserModule,
