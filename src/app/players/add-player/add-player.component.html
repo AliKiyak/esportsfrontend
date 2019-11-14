@@ -15,30 +15,36 @@
                     <input formControlName="age" type="number" class="form-control" id="age" name="age">
                 </div>
                 <div class="form-group">
+                    <label for="team">Team</label>
+                    <select id="team" class="form-control" formControlName="team" (change)="changeTeam($event.target.value)">
+                        <option selected>Choose a team</option>
+                        <option *ngFor="let team of teams" [ngValue]="team.id">{{ team.name }}</option>
+                    </select>
+                </div>
+                <div class="form-group">
                     <label for="mouse">Mouse</label>
-                    <textarea formControlName="mouse" type="text" class="form-control" id="mouse"
-                        name="mouse"></textarea>
+                    <input formControlName="mouse" type="text" class="form-control" id="mouse" name="mouse">
                 </div>
                 <div class="form-group">
                     <label for="mousepad">Mousepad</label>
-                    <textarea formControlName="mousepad" type="text" class="form-control" id="mousepad"
-                        name="mousepad"></textarea>
+                    <input formControlName="mousepad" type="text" class="form-control" id="mousepad" name="mousepad">
                 </div>
                 <div class="form-group">
                     <label for="keyboard">Keyboard</label>
-                    <textarea formControlName="keyboard" type="text" class="form-control" id="keyboard"
-                        name="keyboard"></textarea>
+                    <input formControlName="keyboard" type="text" class="form-control" id="keyboard" name="keyboard">
                 </div>
                 <div class="form-group">
                     <label for="headset">Headset</label>
-                    <textarea formControlName="headset" type="text" class="form-control" id="headset"
-                        name="headset"></textarea>
+                    <input formControlName="headset" type="text" class="form-control" id="headset" name="headset">
                 </div>
-                <!-- <div class="form-group">
-                    <label for="picture">Upload a profile picture</label>
-                    <textarea formControlName="picture" type="text" class="form-control" id="picture"
-                        name="picture"></textarea>
-                </div> -->
+                <div class="form-group">
+                    <input style="display: none" type="file" id="picture" name="picture"
+                        (change)="onPictureChange($event)" #fileInput>
+                    <input style="display: none;" type="text" class="form-control" formControlName="picture"
+                        id="picture">
+                    <button class="btn btn-danger" (click)="fileInput.click(); $event.preventDefault();">Upload profile
+                        picture</button>
+                </div>
 
                 <input type="submit" class="btn btn-primary" value="Add player">
             </form>

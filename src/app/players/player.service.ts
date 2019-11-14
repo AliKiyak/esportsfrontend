@@ -24,4 +24,8 @@ export class PlayerService {
     filterPlayers(gamerTag) {
         return this.http.get<Player>('http://localhost:8050/player/players/filter/' + gamerTag);
     }
+
+    deletePlayer(playerId) {
+        return this.http.delete<any>('http://localhost:8050/player/deleteplayer/' + playerId);
+      }
 }

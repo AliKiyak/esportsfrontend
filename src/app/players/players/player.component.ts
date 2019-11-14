@@ -22,12 +22,18 @@ export class PlayerComponent implements OnInit {
   }
 
   filterPlayers() {
-    if (this.gamertag === '') {
+    if (this.gamertag == '') {
       this.ngOnInit();
     } else {
       this._playerService.filterPlayers(this.gamertag).subscribe(
         result => this.players = result
       );
     }
+  }
+
+  deletePlayer(playerid) {
+    this._playerService.deletePlayer(playerid).subscribe(
+      () => this.ngOnInit()
+    );
   }
 }

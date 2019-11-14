@@ -16,6 +16,10 @@ import { TournamentsComponent } from './tournaments/tournaments.component';
 import { TournamentDetailComponent } from './tournaments/tournament-detail/tournament-detail.component';
 import { DetailTeamComponent } from './team/detail-team/detail-team.component';
 import { AddTournamentComponent } from './tournaments/add-tournament/add-tournament.component';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { environment } from '../environments/environment'
 
 
 const appRoutes = [
@@ -51,7 +55,10 @@ const appRoutes = [
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
-    PlayersModule
+    PlayersModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireStorageModule,
+    AngularFireDatabaseModule
   ],
   providers: [],
   bootstrap: [AppComponent]

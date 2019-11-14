@@ -24,15 +24,7 @@ export class TeamComponent implements OnInit {
       this.teamService.getTeamOfGame(gameid).subscribe(result => this.teams = result);
     }
   }
-  filterTeams() {
-    if (this.teamtitle == '') {
-      this.ngOnInit();
-    } else {
-      this.teamService.filterTeams(this.teamtitle).subscribe(
-        result => this.teams = result
-      );
-    }
-  }
+  
   filterTeams() {
     if (this.teamtitle == '') {
       this.ngOnInit();
