@@ -10,16 +10,24 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class PlayerComponent implements OnInit {
 
-  constructor(private _playerService: PlayerService, private route: ActivatedRoute) { 
-
-    this._playerService.getPlayers().subscribe(result => {
-      this.players = result;
-    })
+  players: any = [];
+  gamertag = '';
+  constructor(private _playerService: PlayerService, private route: ActivatedRoute) {
   }
 
   ngOnInit() {
+    this._playerService.getPlayers().subscribe(result => {
+      this.players = result;
+    });
   }
 
-  players: Player[] = [];
-
+  filterPlayers() {
+    if (this.gamertag === '') {
+      this.ngOnInit();
+    } else {
+      this._playerService.filterPlayers(this.gamertag).subscribe(
+        result => this.players = result
+      );
+    }
+  }
 }

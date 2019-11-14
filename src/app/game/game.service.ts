@@ -23,4 +23,8 @@ export class GameService {
   filterGames(title) {
     return this.http.get<any>('http://localhost:8050/game/games/filter/' + title);
   }
+
+  deleteGame(gameId) {
+    return this.http.delete<any>('http://localhost:8050/game/deletegame/' + gameId);
+  }
 }
