@@ -1,5 +1,11 @@
 <div class="container">
     <div class="row">
+      <div class="col-12">
+        <div class="form-group">
+          <label for="title">Search</label>
+          <input name="title" id="title" type="text" class="form-control" [(ngModel)]="teamtitle" (change)="filterTeams()" >
+        </div>
+      </div>
         <div class="col-lg-4 col-md-6 col-sm-12 d-flex align-items-stretch" *ngFor="let team of teams">
             <div class="card mt-5">
                 <img [src]="team.imageUrl" alt="Game Image" class="card-img-top" />
@@ -8,7 +14,7 @@
                     <h6 class="text-muted">{{team.game}}</h6>
                     <h6 class="text-muted">Owned by {{team.owner}}</h6>
                     <p class="card-text">{{team.description}}</p>
-                    <a href="#" class="btn btn-primary ml-1">Details</a>
+                    <a [routerLink]="['/teams/detail', team.id]" class="btn btn-primary ml-1">Details</a>
                     <a href="#" class="btn btn-primary ml-1">Tournaments</a>
                     <a href="#" class="btn btn-primary ml-1">Players</a>
                 </div>

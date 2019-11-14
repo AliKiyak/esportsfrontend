@@ -13,6 +13,7 @@ export class TeamComponent implements OnInit {
     private teamService: TeamService,
     private route: ActivatedRoute
   ) {}
+  teamtitle = '';
 
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('gameid');
@@ -21,6 +22,15 @@ export class TeamComponent implements OnInit {
       this.teamService.getTeams().subscribe(result => (this.teams = result));
     } else {
       this.teamService.getTeamOfGame(id).subscribe(result => this.teams = result);
+    }
+  }
+  filterTeams() {
+    if (this.teamtitle == '') {
+      this.ngOnInit();
+    } else {
+      this.teamService.filterTeams(this.teamtitle).subscribe(
+        result => this.teams = result
+      );
     }
   }
 }
