@@ -15,9 +15,11 @@ export class AddTeamComponent implements OnInit {
   games: any = [];
   teamForm = new FormGroup({
     name: new FormControl(''),
-    game: new FormControl(''),
+    gameId: new FormControl(''),
     imageUrl: new FormControl(''),
+    owner: new FormControl(''),
     description: new FormControl(''),
+
   });
   constructor(private router: Router, private teamService: TeamService, private gameService: GameService) { }
 

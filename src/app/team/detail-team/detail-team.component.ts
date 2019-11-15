@@ -14,7 +14,7 @@ export class DetailTeamComponent implements OnInit {
 
   ngOnInit() {
     const id =  this.route.snapshot.paramMap.get('teamid');
-
+    console.log(id);
     this.teamService.getTeam(id).subscribe(
       result => this.team = result
     );
