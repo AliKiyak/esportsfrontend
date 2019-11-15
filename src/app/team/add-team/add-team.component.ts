@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { TeamService } from '../team.service';
+import { GameService} from '../../game/game.service';
 
 @Component({
   selector: 'app-add-team',
@@ -10,17 +11,21 @@ import { TeamService } from '../team.service';
 })
 export class AddTeamComponent implements OnInit {
 
+  teams: any = [];
+  games: any = [];
   teamForm = new FormGroup({
     name: new FormControl(''),
     game: new FormControl(''),
     imageUrl: new FormControl(''),
     description: new FormControl(''),
   });
-  constructor(private router: Router, private teamService: TeamService) { }
+  constructor(private router: Router, private teamService: TeamService, private gameService: GameService) { }
 
   ngOnInit() {
+    this.gameService.getGames().subscribe(
+      result => this.games = result
+    );
   }
-
   onSubmit() {
     this.teamService.addTeam(this.teamForm.value).subscribe(
       result => { console.log(result); this.router.navigate(['/teams']); }

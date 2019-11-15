@@ -8,11 +8,11 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./team.component.scss']
 })
 export class TeamComponent implements OnInit {
-  teams: any = [];
   constructor(
     private teamService: TeamService,
     private route: ActivatedRoute
   ) {}
+  teams: any = [];
   teamtitle = '';
 
   ngOnInit() {
@@ -24,9 +24,8 @@ export class TeamComponent implements OnInit {
       this.teamService.getTeamOfGame(gameid).subscribe(result => this.teams = result);
     }
   }
-  
   filterTeams() {
-    if (this.teamtitle == '') {
+    if (this.teamtitle === '') {
       this.ngOnInit();
     } else {
       this.teamService.filterTeams(this.teamtitle).subscribe(
