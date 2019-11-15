@@ -11,10 +11,6 @@
                     <textarea formControlName="description" type="text" class="form-control" id="description" name="description"></textarea>
                 </div>
                 <div class="form-group">
-                    <label for="imageUrl">Url to the image</label>
-                    <input formControlName="imageUrl" type="text" class="form-control" id="imageUrl" name="imageUrl">
-                </div>
-                <div class="form-group">
                     <label for="gameId">Game</label>
                     <select class="form-control" name="gameId" id="gameId" formControlName="gameId" (change)="gameChanged()">
                         <option *ngFor="let game of games" [value]="game.id">{{game.title}}</option>
@@ -26,7 +22,15 @@
                         <label>{{team.name}}</label>
                     </div>
                 </div>
-                <input type="submit" class="btn btn-primary" value="Add game">
+                <div class="form-group">
+                    <input style="display: none" type="file" id="picture" name="picture"
+                        (change)="onPictureChange($event)" #fileInput>
+                    <input style="display: none;" type="text" class="form-control" formControlName="imageUrl"
+                        id="picture">
+                    <button class="btn btn-danger" (click)="fileInput.click(); $event.preventDefault();">Upload profile
+                        picture</button>
+                </div>
+                <input type="submit" class="btn btn-primary" value="Add Tournament">
             </form>
         </div>
     </div>

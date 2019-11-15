@@ -33,6 +33,7 @@ const appRoutes = [
   {path: 'teams/detail/:teamid', component: DetailTeamComponent},
   {path: 'team/addteam', component: AddTeamComponent},
   {path: 'players', component: PlayerComponent},
+  {path: 'players/:teamid', component: PlayerComponent},
   {path: 'player/detail/:playerId', component: DetailPlayerComponent},
   {path: 'players/addplayer', component: AddPlayerComponent},
   {path: 'tournaments', component: TournamentsComponent},

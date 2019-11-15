@@ -3,7 +3,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { PlayerService } from '../player.service';
 import { Player } from 'src/app/models/player.model';
-import { AngularFireStorage, AngularFireStorageReference, AngularFireUploadTask } from '@angular/fire/storage'
+import { AngularFireStorage, AngularFireStorageReference, AngularFireUploadTask } from '@angular/fire/storage';
 import { TeamService } from 'src/app/team/team.service';
 
 @Component({
@@ -21,7 +21,7 @@ export class AddPlayerComponent implements OnInit {
   ngOnInit() {
     this._teamService.getTeams().subscribe(result => {
       this.teams = result;
-    })
+    });
   }
 
   playerForm = new FormGroup({
@@ -57,7 +57,7 @@ export class AddPlayerComponent implements OnInit {
     this.url = await task.ref.getDownloadURL();
 
     this.playerForm.controls['picture'].setValue(this.url);
-     
+    
     this._playerService.addPlayer(this.playerForm.value).subscribe(result => {
       console.log(this.playerForm.value);
       this.router.navigate(['/players']);
