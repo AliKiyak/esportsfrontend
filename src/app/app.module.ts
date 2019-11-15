@@ -19,7 +19,9 @@ import { AddTournamentComponent } from './tournaments/add-tournament/add-tournam
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
-import { environment } from '../environments/environment'
+import { environment } from '../environments/environment';
+import {AddTeamComponent} from './team/add-team/add-team.component';
+
 
 
 const appRoutes = [
@@ -29,13 +31,14 @@ const appRoutes = [
   {path: 'teams', component: TeamComponent},
   {path: 'teams/:gameid', component: TeamComponent},
   {path: 'teams/detail/:teamid', component: DetailTeamComponent},
+  {path: 'team/addteam', component: AddTeamComponent},
   {path: 'players', component: PlayerComponent},
   {path: 'player/detail/:playerId', component: DetailPlayerComponent},
   {path: 'players/addplayer', component: AddPlayerComponent},
   {path: 'tournaments', component: TournamentsComponent},
   {path: 'tournaments/game/:gameid', component: TournamentsComponent},
   {path: 'tournament/detail/:tournamentid', component: TournamentDetailComponent},
-  {path: 'tournament/addtournament', component: AddTournamentComponent},
+  {path: 'tournament/addtournament', component: AddTournamentComponent}
 ];
 @NgModule({
   declarations: [
@@ -47,7 +50,8 @@ const appRoutes = [
     AddGameComponent,
     TournamentsComponent,
     TournamentDetailComponent,
-    AddTournamentComponent
+    AddTournamentComponent,
+    AddTeamComponent
   ],
   imports: [
     BrowserModule,

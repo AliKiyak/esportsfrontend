@@ -11,7 +11,7 @@
                 <img [src]="team.imageUrl" alt="Game Image" class="card-img-top" />
                 <div class="card-body">
                     <h5 class="card-title">{{team.name}}</h5>
-                    <h6 class="text-muted">{{team.game}}</h6>
+                    <h6 class="text-muted">{{team.game.name}}</h6>
                     <h6 class="text-muted">Owned by {{team.owner}}</h6>
                     <p class="card-text">{{team.description}}</p>
                     <a [routerLink]="['/teams/detail', team.id]" class="btn btn-primary ml-1">Details</a>
