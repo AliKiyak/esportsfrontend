@@ -33,4 +33,10 @@ export class TeamComponent implements OnInit {
       );
     }
   }
+
+  deleteTeam(teamId) {
+    this.teamService.deleteTeam(teamId).subscribe(
+      () => this.ngOnInit()
+    );
+  }
 }
