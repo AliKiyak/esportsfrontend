@@ -4,6 +4,7 @@ import { TournamentService } from '../tournament.service';
 import { GameService } from 'src/app/game/game.service';
 import { TeamService } from 'src/app/team/team.service';
 import { Router } from '@angular/router';
+import { AngularFireStorage, AngularFireStorageReference, AngularFireUploadTask } from '@angular/fire/storage';
 
 @Component({
   selector: 'app-add-tournament',
@@ -23,8 +24,15 @@ export class AddTournamentComponent implements OnInit {
     gameId: new FormControl(''),
   });
 
+  profilePicture: File = null;
+  ref: AngularFireStorageReference;
+  task: AngularFireUploadTask;
+  private basePath = '/tournaments';
+  url: any;
+
   constructor(private tournamentService: TournamentService, private gameService: GameService, 
-              private teamService: TeamService, private router: Router) { }
+              private teamService: TeamService, private router: Router,
+              private afStorage: AngularFireStorage) { }
 
   ngOnInit() {
     this.gameService.getGames().subscribe(
@@ -49,7 +57,20 @@ export class AddTournamentComponent implements OnInit {
   }
 
 
-  onSubmit() {
+  async onPictureChange(event) {
+    this.profilePicture = <File>event.target.files[0];
+  }
+  async onSubmit() {
+
+    const filePath = `${this.basePath}/${this.profilePicture.name}`;
+
+    // uploads the image into the Firebase storage server
+    const task = await this.afStorage.upload(filePath, this.profilePicture);
+
+    // gets back the uploaded image in a URL
+    this.url =  await task.ref.getDownloadURL();
+
+    this.gameForm.controls['imageUrl'].setValue(this.url);
     const data  = Object.assign({}, this.gameForm.value, {teams: this.teamStrings});
 
     this.tournamentService.addTournament(data).subscribe(

@@ -1,27 +1,44 @@
 # Esportsfrontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.5.
+[![Generic badge](https://img.shields.io/badge/Build%20With-Angular-green.svg)]()
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-no-red.svg)]()
+[![Ask Me Anything !](https://img.shields.io/badge/Ask%20me-anything-1abc9c.svg)]()
+[![made-for-Thomas More Geel](https://img.shields.io/badge/Made%20for-Thomas%20More%20Geel-1f425f.svg)](https://thomasmore.be/)
+[![GitHub release](https://img.shields.io/github/release/Naereen/StrapDown.js.svg)]()
+[![CC-0 license](https://img.shields.io/badge/License-CC--0-blue.svg)](https://creativecommons.org/licenses/by-nd/4.0)
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Description
 
-## Code scaffolding
+The frontend of our Esport appliaction running in angular.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Visuals
 
-## Build
+[![Screenshot 1](https://live.staticflickr.com/8109/8594455273_23f87d3daf_b.jpg)](https://live.staticflickr.com/8109/8594455273_23f87d3daf_b.jpg)
+[![Screenshot 2](https://live.staticflickr.com/8109/8594455273_23f87d3daf_b.jpg](https://live.staticflickr.com/8109/8594455273_23f87d3daf_b.jpg)
+[![Screenshot 3](https://live.staticflickr.com/8109/8594455273_23f87d3daf_b.jpg)](https://live.staticflickr.com/8109/8594455273_23f87d3daf_b.jpg)
+[![Screenshot 4](https://live.staticflickr.com/8109/8594455273_23f87d3daf_b.jpg)](https://live.staticflickr.com/8109/8594455273_23f87d3daf_b.jpg)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Installation
 
-## Running unit tests
+* Cone our project (git clone https://github.com/AliKiyak/esportsfrontend.git)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Usage
 
-## Running end-to-end tests
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## Support
 
-## Further help
+This is a school projecht, we can not give any/many support.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Authors and acknowledgment
+
+* AliKiyak
+* BoszS
+* VanhoofR
+* Christophe195
+
+## License
+
+Attribution-NoDerivatives 4.0 International (CC BY-ND 4.0)
+https://creativecommons.org/licenses/by-nd/4.0/

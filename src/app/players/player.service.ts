@@ -27,5 +27,9 @@ export class PlayerService {
 
     deletePlayer(playerId) {
         return this.http.delete<any>('http://localhost:8050/player/deleteplayer/' + playerId);
-      }
+    }
+
+    getPlayersOfTeam(teamid) {
+        return this.http.get<any>('http://localhost:8050/player/players/team/' + teamid);
+    }
 }

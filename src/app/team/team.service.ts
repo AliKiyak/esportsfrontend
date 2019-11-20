@@ -24,4 +24,8 @@ export class TeamService {
   filterTeams(title) {
     return this.http.get<any>('http://localhost:8050/team/teams/filter/' + title);
   }
+
+  deleteTeam(id) {
+    return this.http.delete<any>('http://localhost:8050/team/delete/' + id);
+  }
 }

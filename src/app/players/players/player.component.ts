@@ -16,9 +16,16 @@ export class PlayerComponent implements OnInit {
   }
 
   ngOnInit() {
-    this._playerService.getPlayers().subscribe(result => {
-      this.players = result;
-    });
+    const teamId = this.route.snapshot.paramMap.get('teamid');
+
+    if (teamId === null) {
+      this._playerService.getPlayers().subscribe(result => {
+        this.players = result;
+      });
+    } else {
+      this._playerService.getPlayersOfTeam(teamId).subscribe(result => this.players = result);
+    }
+
   }
 
   filterPlayers() {
