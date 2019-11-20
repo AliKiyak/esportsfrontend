@@ -28,7 +28,7 @@ export class AddPlayerComponent implements OnInit {
     gamerTag: new FormControl(''),
     realName: new FormControl(''),
     age: new FormControl(''),
-    team: new FormControl(''),
+    teamId: new FormControl(''),
     mouse: new FormControl(''),
     mousepad: new FormControl(''),
     headset: new FormControl(''),
@@ -59,14 +59,12 @@ export class AddPlayerComponent implements OnInit {
     this.playerForm.controls['picture'].setValue(this.url);
      
     this._playerService.addPlayer(this.playerForm.value).subscribe(result => {
-      console.log(this.playerForm.value);
       this.router.navigate(['/players']);
     });
   }
 
   changeTeam(e) {
-    // this.playerForm.controls['team'].setValue(e.target.value);
-    console.log(e);
+    this.playerForm.controls['teamId'].setValue(e);
   }
 
 }
