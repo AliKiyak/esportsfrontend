@@ -28,7 +28,7 @@
                     <button class="btn btn-danger" (click)="fileInput.click(); $event.preventDefault();">Upload profile
                         picture</button>
                 </div>
-                <input type="submit" class="btn btn-primary" value="Add team">
+                <input type="submit" class="btn btn-primary" [value]="buttontext">
             </form>
         </div>
     </div>

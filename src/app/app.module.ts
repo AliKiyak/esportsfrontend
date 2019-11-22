@@ -25,17 +25,25 @@ import {AddTeamComponent} from './team/add-team/add-team.component';
 
 
 const appRoutes = [
+  {path: '', component: GameComponent},
   {path: 'games', component: GameComponent},
   {path: 'games/detail/:gameid', component: DetailGameComponent},
   {path: 'games/addgame', component: AddGameComponent},
+  {path: 'games/editgame/:gameid', component: AddGameComponent},
   {path: 'teams', component: TeamComponent},
   {path: 'teams/:gameid', component: TeamComponent},
   {path: 'teams/detail/:teamid', component: DetailTeamComponent},
   {path: 'team/addteam', component: AddTeamComponent},
+  {path: 'team/editteam/:teamid', component: AddTeamComponent},
   {path: 'players', component: PlayerComponent},
   {path: 'players/:teamid', component: PlayerComponent},
   {path: 'player/detail/:playerId', component: DetailPlayerComponent},
+<<<<<<< HEAD
   {path: 'player/addplayer', component: AddPlayerComponent},
+=======
+  {path: 'players/addplayer', component: AddPlayerComponent},
+  {path: 'players/editplayer/:playerid', component: AddPlayerComponent},
+>>>>>>> put team en game toegevoegd
   {path: 'tournaments', component: TournamentsComponent},
   {path: 'tournaments/game/:gameid', component: TournamentsComponent},
   {path: 'tournament/detail/:tournamentid', component: TournamentDetailComponent},

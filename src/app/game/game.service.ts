@@ -27,4 +27,7 @@ export class GameService {
   deleteGame(gameId) {
     return this.http.delete<any>('http://localhost:8050/game/deletegame/' + gameId);
   }
+  editGame(gameId, game) {
+    return this.http.put<any>('http://localhost:8050/game/editgame/' + gameId, game);
+  }
 }

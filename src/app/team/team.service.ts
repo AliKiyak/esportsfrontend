@@ -28,4 +28,8 @@ export class TeamService {
   deleteTeam(id) {
     return this.http.delete<any>('http://localhost:8050/team/delete/' + id);
   }
+
+  editTeam(id, team) {
+    return this.http.put<any>('http://localhost:8050/team/editteam/' + id, team);
+  }
 }

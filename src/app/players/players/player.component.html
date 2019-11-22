@@ -25,6 +25,7 @@
         </div>
         <div class="card-footer text-muted">
           <button class="btn btn-light" (click)="deletePlayer(p.id)">Delete player</button>
+          <button [routerLink]="['/players/editplayer', p.id]" class="btn btn-light">Edit player</button>
         </div>
       </div>
     </div>

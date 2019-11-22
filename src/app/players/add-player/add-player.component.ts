@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { PlayerService } from '../player.service';
 import { AngularFireStorage, AngularFireStorageReference, AngularFireUploadTask } from '@angular/fire/storage';
 import { TeamService } from 'src/app/team/team.service';
@@ -15,10 +15,18 @@ export class AddPlayerComponent implements OnInit {
   teams: any = [];
   playerForm: FormGroup;
 
-  constructor(private router: Router, private _playerService: PlayerService, private afStorage: AngularFireStorage, private _teamService: TeamService ) { 
-  }
+  constructor(private router: Router, private _playerService: PlayerService,
+              private afStorage: AngularFireStorage, private _teamService: TeamService,
+              private route: ActivatedRoute) {}
 
   ngOnInit() {
+    this.id = this.route.snapshot.paramMap.get('playerid');
+
+    if (this.id !== null || this.id !== '' ) {
+      this._playerService.getPlayer(this.id).subscribe(
+        result => {this.player = result; this.fillForm(); this.buttontext = 'Edit player'; }
+      )
+    }
     this._teamService.getTeams().subscribe(result => {
       this.teams = result;
     });
@@ -46,6 +54,20 @@ export class AddPlayerComponent implements OnInit {
     this.profilePicture = <File>event.target.files[0];
   }
 
+  fillForm() {
+    this.playerForm.patchValue({
+      gamerTag: this.player.gamerTag,
+      realName: this.player.realName,
+      age: this.player.age,
+      team: this.player.team,
+      mouse: this.player.mouse,
+      mousepad: this.player.mousepad,
+      headset: this.player.headset,
+      keyboard: this.player.keyboard,
+      picture: this.player.picture,
+    })
+  }
+
   async onSubmit() {
     // image path on Firebase storage server
     const filePath = `${this.basePath}/${this.profilePicture.name}`;
@@ -57,7 +79,6 @@ export class AddPlayerComponent implements OnInit {
     this.url = await task.ref.getDownloadURL();
 
     this.playerForm.controls['picture'].setValue(this.url);
-    
     this._playerService.addPlayer(this.playerForm.value).subscribe(result => {
       this.router.navigate(['/players']);
     });

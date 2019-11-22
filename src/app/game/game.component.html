@@ -28,6 +28,8 @@
         </div>
         <div class="card-footer text-muted">
           <button class="btn btn-light" (click)="deleteGame(game.id)">Delete game</button>
+          <button [routerLink]="['/games/editgame', game.id]" class="btn btn-light">Edit game</button>
+
         </div>
       </div>
     </div>
