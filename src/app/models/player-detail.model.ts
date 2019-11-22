@@ -6,7 +6,7 @@ export class PlayerDetail {
     realName: string;
     age: number;
     mouse: string;
-    mousepad: string; 
+    mousepad: string;
     keyboard: string;
     headset: string;
     picture: string;

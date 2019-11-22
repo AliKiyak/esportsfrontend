@@ -14,6 +14,9 @@ export class AddPlayerComponent implements OnInit {
 
   teams: any = [];
   playerForm: FormGroup;
+  id = '';
+  buttontext = 'Add game';
+  player: any = {};
 
   constructor(private router: Router, private _playerService: PlayerService,
               private afStorage: AngularFireStorage, private _teamService: TeamService,
@@ -23,9 +26,9 @@ export class AddPlayerComponent implements OnInit {
     this.id = this.route.snapshot.paramMap.get('playerid');
 
     if (this.id !== null || this.id !== '' ) {
-      this._playerService.getPlayer(this.id).subscribe(
+      this._playerService.getPlayerWithTeamAndTeammembers(this.id).subscribe(
         result => {this.player = result; this.fillForm(); this.buttontext = 'Edit player'; }
-      )
+      );
     }
     this._teamService.getTeams().subscribe(result => {
       this.teams = result;
@@ -52,6 +55,8 @@ export class AddPlayerComponent implements OnInit {
 
   async onPictureChange(event) {
     this.profilePicture = <File>event.target.files[0];
+    this.playerForm.patchValue({picture: null});
+
   }
 
   fillForm() {
@@ -69,6 +74,7 @@ export class AddPlayerComponent implements OnInit {
   }
 
   async onSubmit() {
+    if (this.playerForm.get('picture').value === null) {
     // image path on Firebase storage server
     const filePath = `${this.basePath}/${this.profilePicture.name}`;
 
@@ -79,9 +85,17 @@ export class AddPlayerComponent implements OnInit {
     this.url = await task.ref.getDownloadURL();
 
     this.playerForm.controls['picture'].setValue(this.url);
+    }
+
+    if (this.id === null || this.id === '') {
     this._playerService.addPlayer(this.playerForm.value).subscribe(result => {
       this.router.navigate(['/players']);
     });
+  } else {
+    this._playerService.editPlayer(this.id, this.playerForm.value).subscribe(
+      () =>   this.router.navigate(['/players'])
+    );
+  }
   }
 
   changeTeam(e) {

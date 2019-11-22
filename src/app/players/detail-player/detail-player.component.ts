@@ -19,12 +19,11 @@ export class DetailPlayerComponent implements OnInit {
 
     this._playerService.getPlayerWithTeamAndTeammembers(id).subscribe(result => {
       this.player = result;
-    })
+    });
    }
 
   ngOnInit() {
   }
 
-  
 
 }

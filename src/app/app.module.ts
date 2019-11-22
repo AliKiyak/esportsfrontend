@@ -38,12 +38,8 @@ const appRoutes = [
   {path: 'players', component: PlayerComponent},
   {path: 'players/:teamid', component: PlayerComponent},
   {path: 'player/detail/:playerId', component: DetailPlayerComponent},
-<<<<<<< HEAD
-  {path: 'player/addplayer', component: AddPlayerComponent},
-=======
   {path: 'players/addplayer', component: AddPlayerComponent},
   {path: 'players/editplayer/:playerid', component: AddPlayerComponent},
->>>>>>> put team en game toegevoegd
   {path: 'tournaments', component: TournamentsComponent},
   {path: 'tournaments/game/:gameid', component: TournamentsComponent},
   {path: 'tournament/detail/:tournamentid', component: TournamentDetailComponent},

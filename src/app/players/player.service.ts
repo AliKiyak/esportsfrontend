@@ -33,4 +33,7 @@ export class PlayerService {
     getPlayersOfTeam(teamid) {
         return this.http.get<any>('http://localhost:8050/player/players/team/' + teamid);
     }
+    editPlayer(playerid, player) {
+        return this.http.put<any>('http://localhost:8050/player/editplayer/' + playerid, player);
+    }
 }
