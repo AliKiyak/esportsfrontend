@@ -11,29 +11,29 @@ export class PlayerService {
     constructor(private http: HttpClient) {}
 
     getPlayers(): Observable<Player[]>{
-        return this.http.get<Player[]>('http://localhost:8050/player/players');
+        return this.http.get<Player[]>('http://localhost:8762/esportsapi/player/players');
     }
 
     getPlayerWithTeamAndTeammembers(playerId) {
-        return this.http.get<PlayerDetail>('http://localhost:8050/player/detail/' + playerId);
+        return this.http.get<PlayerDetail>('http://localhost:8762/esportsapi/player/detail/' + playerId);
     }
 
     addPlayer(player) {
-        return this.http.post<any>('http://localhost:8050/player/addplayer', player);
+        return this.http.post<any>('http://localhost:8762/esportsapi/player/addplayer', player);
     }
 
     filterPlayers(gamerTag) {
-        return this.http.get<Player>('http://localhost:8050/player/players/filter/' + gamerTag);
+        return this.http.get<Player>('http://localhost:8762/esportsapi/player/players/filter/' + gamerTag);
     }
 
     deletePlayer(playerId) {
-        return this.http.delete<any>('http://localhost:8050/player/deleteplayer/' + playerId);
+        return this.http.delete<any>('http://localhost:8762/esportsapi/player/deleteplayer/' + playerId);
     }
 
     getPlayersOfTeam(teamid) {
-        return this.http.get<any>('http://localhost:8050/player/players/team/' + teamid);
+        return this.http.get<any>('http://localhost:8762/esportsapi/player/players/team/' + teamid);
     }
     editPlayer(playerid, player) {
-        return this.http.put<any>('http://localhost:8050/player/editplayer/' + playerid, player);
+        return this.http.put<any>('http://localhost:8762/esportsapi/player/editplayer/' + playerid, player);
     }
 }
