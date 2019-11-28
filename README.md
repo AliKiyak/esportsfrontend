@@ -7,7 +7,7 @@ The frontend of our Esport application running in Angular.
 
 ## Visuals
 
-###Overzicht
+### Overzicht
 
 ![Screenshot 1](https://i.postimg.cc/hP6qhhGf/frontendgames.png)
 
