@@ -14,7 +14,7 @@ The frontend of our Esport application running in angular.
 
 ## Visuals
 
-[![Screenshot 1](https://i.postimg.cc/NFPv6j7C/addgames.png)]
+![Screenshot 1](https://i.postimg.cc/NFPv6j7C/addgames.png)
 (https://i.postimg.cc/NFPv6j7C/addgames.png)
 [![Screenshot 2](https://live.staticflickr.com/8109/8594455273_23f87d3daf_b.jpg)](https://live.staticflickr.com/8109/8594455273_23f87d3daf_b.jpg)
 [![Screenshot 3](https://live.staticflickr.com/8109/8594455273_23f87d3daf_b.jpg)](https://live.staticflickr.com/8109/8594455273_23f87d3daf_b.jpg)
