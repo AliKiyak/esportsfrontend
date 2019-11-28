@@ -10,7 +10,7 @@
 
 ## Description
 
-The frontend of our Esport application running in angular.
+The frontend of our Esport application running in Angular.
 
 ## Visuals
 
