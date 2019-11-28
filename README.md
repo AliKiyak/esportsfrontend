@@ -2,8 +2,7 @@
 
 
 ## Description
-
-The frontend of our Esport application running in Angular.
+Front end of the Esports wiki. The front end was built using Angular and Bootstrap. Here you can have a look at the different games, teams, tournaments and players that are in the database. You can also add, delete and edit them.
 
 ## Visuals
 
