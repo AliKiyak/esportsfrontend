@@ -1,12 +1,5 @@
 # Esportsfrontend
 
-[![Generic badge](https://img.shields.io/badge/Build%20With-Angular-green.svg)]()
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-no-red.svg)]()
-[![Ask Me Anything !](https://img.shields.io/badge/Ask%20me-anything-1abc9c.svg)]()
-[![made-for-Thomas More Geel](https://img.shields.io/badge/Made%20for-Thomas%20More%20Geel-1f425f.svg)](https://thomasmore.be/)
-[![GitHub release](https://img.shields.io/github/release/Naereen/StrapDown.js.svg)]()
-[![CC-0 license](https://img.shields.io/badge/License-CC--0-blue.svg)](https://creativecommons.org/licenses/by-nd/4.0)
-
 
 ## Description
 
@@ -14,7 +7,7 @@ The frontend of our Esport application running in Angular.
 
 ## Visuals
 
-Overzicht
+###Overzicht
 
 ![Screenshot 1](https://i.postimg.cc/hP6qhhGf/frontendgames.png)
 
