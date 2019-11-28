@@ -15,10 +15,13 @@ The frontend of our Esport application running in angular.
 ## Visuals
 
 Overzicht
+
 ![Screenshot 1](https://i.postimg.cc/hP6qhhGf/frontendgames.png)
 Toevoegen
+
 ![Screenshot 2](https://i.postimg.cc/NFPv6j7C/addgames.png)
 Aanpassen
+
 ![Screenshot 3](https://i.postimg.cc/9FrhWyC6/editgames.png)
 
 ## Download
