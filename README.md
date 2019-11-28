@@ -19,7 +19,7 @@ The frontend of our Esport application running in angular.
 [![Screenshot 3](https://live.staticflickr.com/8109/8594455273_23f87d3daf_b.jpg)](https://live.staticflickr.com/8109/8594455273_23f87d3daf_b.jpg)
 [![Screenshot 4](https://live.staticflickr.com/8109/8594455273_23f87d3daf_b.jpg)](https://live.staticflickr.com/8109/8594455273_23f87d3daf_b.jpg)
 
-## Installation
+## Download
 
 * Clone our project (git clone https://github.com/AliKiyak/esportsfrontend.git)
 
