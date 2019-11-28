@@ -10,7 +10,7 @@
 
 ## Description
 
-The frontend of our Esport appliaction running in angular.
+The frontend of our Esport application running in angular.
 
 ## Visuals
 
@@ -21,7 +21,7 @@ The frontend of our Esport appliaction running in angular.
 
 ## Installation
 
-* Cone our project (git clone https://github.com/AliKiyak/esportsfrontend.git)
+* Clone our project (git clone https://github.com/AliKiyak/esportsfrontend.git)
 
 ## Usage
 
@@ -29,14 +29,14 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.
 
 ## Support
 
-This is a school projecht, we can not give any/many support.
+This is a school project.
 
 ## Authors and acknowledgment
 
-* AliKiyak
-* BoszS
-* VanhoofR
-* Christophe195
+* Ali Kiyak (AliKiyak)
+* Bosz Srisan (BoszS)
+* René Vanhoof (VanhoofR)
+* Chris Tophe (Christophe195)
 
 ## License
 
